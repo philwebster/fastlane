@@ -13,6 +13,7 @@ module FastlaneCore
     # Fetches the app version from the given ipa file.
     def self.fetch_app_version(path)
       plist = self.fetch_info_plist_file(path)
+      puts plist['CFBundleShortVersionString'] if plist
       return plist['CFBundleShortVersionString'] if plist
       return nil
     end
